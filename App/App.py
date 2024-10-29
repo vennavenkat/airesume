@@ -36,8 +36,12 @@ import os
 # nltk.download('stopwords', force=True)
 
 # Download resources into the directory
-nltk.download('stopwords', download_dir='.\\nltk_data')
-nltk.data.path.append('.\\nltk_data')
+import nltk
+
+nltk.download('stopwords', download_dir='./nltk_data')
+nltk.data.path.append('./nltk_data')
+import nltk
+nltk.download('popular')
 
 # Use stopwords
 from nltk.corpus import stopwords
