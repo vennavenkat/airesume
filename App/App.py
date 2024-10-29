@@ -36,10 +36,16 @@ import os
 # nltk.download('stopwords', force=True)
 
 # Download resources into the directory
-import nltk
+# import nltk
 
-nltk.download('stopwords', download_dir='./nltk_data')
-nltk.data.path.append('./nltk_data')
+# nltk.download('stopwords', download_dir='./nltk_data')
+# nltk.data.path.append('./nltk_data')
+import nltk
+nltk.data.path = ['./nltk_data']  # Set the path directly
+
+nltk.download('stopwords', download_dir='./nltk_data', force=True) 
+
+from pyresparser import ResumeParser
 
 # Use stopwords
 from nltk.corpus import stopwords
