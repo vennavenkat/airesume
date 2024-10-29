@@ -37,8 +37,8 @@ import os
 
 # Download resources into the directory
 import nltk
-nltk.download('stopwords', download_dir='D:\\AI-Resume-Analyzer\\App\\nltk_data',force=True)
-nltk.data.path.append('D:\\AI-Resume-Analyzer\\App\\nltk_data')
+nltk.download('stopwords', download_dir='..\\AI-Resume-Analyzer\\App\\nltk_data',force=True)
+nltk.data.path.append('..\\AI-Resume-Analyzer\\App\\nltk_data')
 
 # Use stopwords
 from nltk.corpus import stopwords
