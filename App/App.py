@@ -29,7 +29,18 @@ from PIL import Image
 from Courses import ds_course,web_course,android_course,ios_course,uiux_course,resume_videos,interview_videos
 import nltk
 import os
+import nltk
+import ssl
 
+try:
+    _create_unverified_https_context = ssl._create_unverified_context
+except AttributeError:
+    pass
+else:
+    ssl._create_default_https_context = _create_unverified_https_context
+
+nltk.download('stopwords', quiet=True)
+nltk.download('punkt', quiet=True)
 # Set the NLTK data path
 # nltk_data_dir = os.path.join(os.path.dirname(__file__), 'nltk_data')
 # nltk.data.path.append(nltk_data_dir)
