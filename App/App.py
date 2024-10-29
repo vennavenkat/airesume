@@ -51,8 +51,9 @@ from pyresparser import ResumeParser
 from nltk.corpus import stopwords
 stopwords = stopwords.words('english')
 print(nltk.data.path) 
-import streamlit as st
-st.write("NLTK test")
+import spacy
+nlp = spacy.load("en_core_web_sm")  # Load a spaCy English model
+STOPWORDS = nlp.Defaults.stop_words
 
 
 ###### Preprocessing functions ######
