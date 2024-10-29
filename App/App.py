@@ -28,11 +28,18 @@ from PIL import Image
 # pre stored data for prediction purposes
 from Courses import ds_course,web_course,android_course,ios_course,uiux_course,resume_videos,interview_videos
 import nltk
-try:
-    stopwords = nltk.corpus.stopwords.words('english')
-except LookupError:
-    nltk.download('stopwords')
-    stopwords = nltk.corpus.stopwords.words('english')
+import os
+
+# Set the NLTK data path
+nltk_data_dir = os.path.join(os.path.dirname(__file__), 'nltk_data')
+nltk.data.path.append(nltk_data_dir)
+
+# Download resources into the directory
+nltk.download('stopwords', download_dir=nltk_data_dir)
+
+# Use stopwords
+from nltk.corpus import stopwords
+stopwords = stopwords.words('english')
 
 
 ###### Preprocessing functions ######
