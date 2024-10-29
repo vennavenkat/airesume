@@ -31,11 +31,13 @@ import nltk
 import os
 
 # Set the NLTK data path
-nltk_data_dir = os.path.join(os.path.dirname(__file__), 'nltk_data')
-nltk.data.path.append(nltk_data_dir)
+# nltk_data_dir = os.path.join(os.path.dirname(__file__), 'nltk_data')
+# nltk.data.path.append(nltk_data_dir)
 
 # Download resources into the directory
-nltk.download('stopwords', download_dir=nltk_data_dir)
+import nltk
+nltk.download('stopwords', download_dir='/path/to/your/project/nltk_data')
+nltk.data.path.append('/path/to/your/project/nltk_data')
 
 # Use stopwords
 from nltk.corpus import stopwords
