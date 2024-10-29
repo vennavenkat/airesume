@@ -50,6 +50,9 @@ from pyresparser import ResumeParser
 # Use stopwords
 from nltk.corpus import stopwords
 stopwords = stopwords.words('english')
+print(nltk.data.path) 
+import streamlit as st
+st.write("NLTK test")
 
 
 ###### Preprocessing functions ######
