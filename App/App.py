@@ -42,27 +42,11 @@ import os
 # nltk.data.path.append('./nltk_data')
 import nltk
 import os
-
-import nltk
-import os
-import tempfile
 from nltk.corpus import stopwords
-
-# Set up a temporary directory for NLTK data
-nltk_data_path = os.path.join(tempfile.gettempdir(), "nltk_data")
-os.makedirs(nltk_data_path, exist_ok=True)
-
-# Point NLTK to the temp directory
-nltk.data.path.append(nltk_data_path)
-
-# Check if stopwords are already downloaded; if not, download them
 try:
-    stopwords.words("english")
+    nltk.data.find('corpora/stopwords')
 except LookupError:
-    nltk.download("stopwords", download_dir=nltk_data_path)
-
-# Now, import your parser after ensuring stopwords are available
-from pyresparser import ResumeParser
+    nltk.download('stopwords')
 
 
 
