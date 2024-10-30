@@ -44,15 +44,17 @@ import nltk
 import os
 
 # Specify the download path for NLTK data
-nltk_data_path = os.path.join(os.getcwd(), "nltk_data")
-nltk.data.path.append(nltk_data_path)
+import nltk
+import ssl
 
-# Check if stopwords are already downloaded; if not, download them
 try:
-    from nltk.corpus import stopwords
-    stopwords.words('english')
-except LookupError:
-    nltk.download('stopwords', download_dir=nltk_data_path)
+    _create_unverified_https_context = ssl._create_unverified_context
+except AttributeError:
+    pass
+else:
+    ssl._create_default_https_context = _create_unverified_https_context
+
+nltk.download('stopwords')
 
 
 from pyresparser import ResumeParser
