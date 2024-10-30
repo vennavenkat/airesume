@@ -44,7 +44,7 @@ import nltk
 import os
 from nltk.corpus import stopwords
 try:
-    nltk.data.find('corpora/stopwords')
+    nltk.data.find('./App/nltk_data/corpora/stopwords')
 except LookupError:
     nltk.download('stopwords')
 
