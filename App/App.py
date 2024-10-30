@@ -42,8 +42,18 @@ import os
 # nltk.data.path.append('./nltk_data')
 import nltk
 import os
+
+# Specify the download path for NLTK data
 nltk_data_path = os.path.join(os.getcwd(), "nltk_data")
 nltk.data.path.append(nltk_data_path)
+
+# Check if stopwords are already downloaded; if not, download them
+try:
+    from nltk.corpus import stopwords
+    stopwords.words('english')
+except LookupError:
+    nltk.download('stopwords', download_dir=nltk_data_path)
+
 
 from pyresparser import ResumeParser
 
